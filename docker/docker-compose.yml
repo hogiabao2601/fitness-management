@@ -1,0 +1,60 @@
+version: '3'
+
+services:
+#  tdss-phoenix:
+#    build:
+#      context: ./
+#      dockerfile: ./docker/hbase-2.0-phoenix-5.0/Dockerfile
+#    container_name: tdss-phoenix
+#    ports:
+#      - "2181:2181"
+#      - "16000:16000"
+#      - "16020:16020"
+#    hostname: docker.phoenix.host
+#    environment:
+#      PHOENIX_SCHEMA: TDSS_TEST
+#    networks:
+#      - tdss-network
+
+#  tdss-activemq:
+#    image: webcenter/activemq:5.16.5
+#
+#    build:
+#      context: ./
+#      dockerfile: ./docker/activemq/Dockerfile
+#    container_name: tdss-activemq
+#
+#    ports:
+#      #  for mqtt
+#      - "1883:1883"
+#      # for amqp
+#      - "5672:5672"
+#      # for ui
+#      - "8161:8161"
+#      # for stomp
+#      - "61613:61613"
+#      # for ws
+#      - "61614:61614"
+#      # for jms
+#      - "61616:61616"
+#    networks:
+#      - tdss-network
+
+  sql-db:
+    image: mysql:8.0
+    container_name: sql-db
+    hostname: local-mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: fitness
+    volumes:
+      - ../sql/mysql/ddl/:/docker-entrypoint-initdb.d
+    networks:
+      - fitness-network
+
+networks:
+  fitness-network:
+    driver: bridge

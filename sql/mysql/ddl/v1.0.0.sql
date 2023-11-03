@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS user(
+  id INT(11) NOT NULL AUTO_INCREMENT,
+  username VARCHAR(30) NOT NULL,
+  `password` VARCHAR(60) NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT unique_username UNIQUE (username)
+);
