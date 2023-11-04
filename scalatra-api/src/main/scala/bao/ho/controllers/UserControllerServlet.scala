@@ -1,10 +1,10 @@
 package bao.ho.controllers
 
 import bao.ho.logger.AppLogger
-import bao.ho.models.sql.UserCirce._
+import bao.ho.responses.UserAlertCirce._
 import cats.effect.Async
-import cats.syntax.applicativeError._
 import cats.syntax.functor._
+import cats.syntax.applicativeError._
 import io.circe.syntax.EncoderOps
 import org.scalatra.{ BadRequest, Ok }
 

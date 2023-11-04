@@ -47,6 +47,10 @@ class BaseDependencies(version: Version) {
     "com.mysql" % "mysql-connector-j" % mysqlVersion // GPL 2.0
   )
 
+  val phoenixDependencies: Seq[ModuleID] = Seq(
+    "org.apache.phoenix" % "phoenix-client-hbase-2.4" % "5.1.3"
+  )
+
   val circeDependencies: Seq[ModuleID] = Seq(
     "io.circe" %% "circe-core"    % circeVersion,
     "io.circe" %% "circe-parser"  % circeVersion,

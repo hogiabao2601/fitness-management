@@ -30,7 +30,7 @@
             <AppenderRef ref="stdout"/>
         </Logger>
 
-        <Root level="INFO">
+        <Root level="DEBUG">
             <AppenderRef ref="file"/>
             <AppenderRef ref="stdout"/>
         </Root>

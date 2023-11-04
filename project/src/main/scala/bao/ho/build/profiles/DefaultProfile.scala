@@ -32,13 +32,22 @@ object DefaultProfile extends Profile {
     import dv.*
     prepareDependencies(
       ScalatraApi,
-      Seq(doobieDependencies, sqlDependencies).flatten,
+      Seq(doobieDependencies, sqlDependencies, phoenixDependencies).flatten,
       Seq.empty,
       Seq.empty
     )
   }
 
-  override def hbaseCommonModuleDependencies: Seq[ModuleID] = Seq()
+  override def hbaseCommonModuleDependencies: Seq[ModuleID] = {
+    val dv = dependencies.apply(moduleLevelVersion.scalatraCommonDependenciesVersion)
+    import dv.*
+    prepareDependencies(
+      ScalatraApi,
+      Seq(doobieDependencies, phoenixDependencies).flatten,
+      Seq.empty,
+      Seq.empty
+    )
+  }
 
   override def modelModuleDependencies: Seq[ModuleID] = Seq()
 

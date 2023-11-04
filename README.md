@@ -10,3 +10,5 @@
  - Login and show data from hbase
 
 [![Module Dependency](./#Hhogiabao2601%2Ffitness-management%2Fmain%2FModuleDependency.svg)](https://app.diagrams.net/#Hhogiabao2601%2Ffitness-management%2Fmain%2FModuleDependency.svg)
+
+![ScreenShot](https://app.diagrams.net/#Hhogiabao2601%2Ffitness-management%2Fmain%2FModuleDependency.svg)
